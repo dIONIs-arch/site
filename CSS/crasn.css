@@ -1,0 +1,1061 @@
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ПОДКЛЮЧЕНИЕ ШРИФТОВ
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+@font-face {
+	font-family: 'Conv_Focus-Regular[2]';
+	src: url('../fonts/Focus-Regular[2].eot');
+	src: local('☺'), url('../fonts/Focus-Regular[2].woff') format('woff'), url('fonts/Focus-Regular[2].ttf') format('truetype'), url('fonts/Focus-Regular[2].svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Marck Script Regular';
+	src: url('../fonts/Marck Script Regular.eot');
+	src: local('☺'), url('../fonts/Marck Script Regular.woff') format('woff'), url('fonts/Marck Script Regular.ttf') format('truetype'), url('fonts/Marck Script Regular.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Conv_Focus-Medium';
+	src: url('../fonts/Focus-Medium.eot');
+	src: local('☺'), url('../fonts/Focus-Medium.woff') format('woff'), url('fonts/Focus-Medium.ttf') format('truetype'), url('fonts/Focus-Medium.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ОБЩАЯ ЧАСТЬ
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+html{
+    scroll-behavior: smooth;
+}
+.osnova{
+    margin: auto;
+    width: 1600px;
+}
+.img_Divider{
+    width: 247px;
+    margin: auto;
+    margin-top: 20px;
+}
+.Marck_Script_Text{
+    text-align: center;
+    font-family: 'Conv_Marck Script Regular';
+    font-size: 36px;
+}
+
+@media (max-width: 1600px){
+    .osnova{
+        width: 100%;
+    }
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.NAV
+самый верхний блок с навигацией
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.nav_fon{
+    background-color: black;
+    opacity: 0.5;
+    width: 1600px;
+    height: 100px;
+    position: fixed;
+    z-index: 2;
+}
+.nav_content{
+    padding: 0 0 0 125px;
+    width: 1600px;
+    height: 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: fixed;
+    z-index: 3;
+}
+.nav_text{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 200px;
+    width: 625px;
+    padding: 35px 0 0;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+.nav_text h2{
+    font-family: 'Conv_Focus-Regular[2]';
+}
+.nav_text a{
+    text-decoration: none;
+    color: white;
+}
+.nav_social_network {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 30px 0 0;
+}
+.nav_social_network a{
+    text-decoration: none;
+
+    color: white;
+    margin: 0 0 0 30px;
+}
+.nav_content div a:hover{
+    color: red;
+}
+.nav_burger {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    width: 1200px;
+}
+.nav__img {
+    margin: 0 0 0 50px;
+}
+@media (max-width: 1600px){
+    .nav {
+        width: 100%;
+    }
+    .nav_fon{
+        width: 100%;
+    }
+    .nav_content {
+        width: 100%;
+        padding: 0;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
+    .nav_text{
+        margin: 0;
+        width: auto;
+    }
+    .nav_text a{
+        margin: 0 0 0 20px;
+    }
+}
+@media (max-width: 1080px){
+    .nav__img {
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .nav_burger {
+        display: block;
+    }
+    .nav__img {
+        display: inline-block;
+        margin: 0 0 0 20px;
+        position: relative;
+        z-index: 16;
+    }
+    .nav_burger{
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        z-index: 15;
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+        background: black;
+    }
+    .nav_burger.active{
+        left: 0;
+    }
+    .nav_content{
+        display: block;
+        width: 100%;
+        padding: 0;
+    }
+    .nav_text {
+        display: block;
+        margin: 50px 0 0 0;
+    }
+    .nav_text h2 {
+        margin: 30px 0 0 0;
+        font-size: 30px;
+    }
+    .nav_social_network {
+        font-size: 30px;
+    }
+    .btn{
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 16;
+    }
+    .btn::before,
+    .btn::after,
+    .btn span {
+        content: "";
+        position: absolute;
+        height: 3px;
+        width: 100%;
+        background: white;
+        -webkit-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+        transition: all 0.3s ease 0s;
+    }
+    .btn::before {
+        top: 0;
+    }
+    .btn::after {
+        bottom: 0;
+    }
+    .btn span {
+        top: 50%;
+    }
+    body.lock {
+        overflow: hidden;
+    }
+    .btn.active span {
+        -webkit-transform: scale(0);
+            -ms-transform: scale(0);
+                transform: scale(0);
+    }
+    .btn.active::before {
+        top: 23px;
+        -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+                transform: rotate(45deg);
+    }
+    .btn.active::after {
+        bottom: 23px;
+        -webkit-transform: rotate(-45deg);
+            -ms-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+    }
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.HEADER
+ПРОСТО САМЫЙ ВЕРХНИЙ
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.header{
+    height: 770px;
+    width: 100%;
+}
+.header_slider{
+    width: auto;
+    height: 920px;
+    background: url(../IMG/header/Layer7.png) center no-repeat;
+    position: relative;
+    top: -150px;
+}
+.header .header_text{
+    width: 800px;
+    margin: auto;
+    position: relative;
+    top: -678px;
+    color: white;
+}
+#Marck_Script_header{ 
+    font-size: 90px;
+}
+.header_text #img_header{
+    margin: 62px auto 0;
+    width: 250px;
+}
+#header_button{
+    width: 510px;
+    margin: 30px auto 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-around;
+}
+.header__button1,
+.header__button2 {
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    width: 230px;
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    font-family: 'Conv_Focus-Regular[1]';
+    position: relative;
+    z-index: 2;
+}
+.header__button1::before,
+.header__button2::before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.4;
+    z-index: 1;
+}
+.header__button1:hover::before,
+.header__button2:hover::before {
+    background-color: tomato;
+}
+@media (max-width: 800px){
+    .header_slider{
+        width: 100%;
+        margin: auto;
+    }
+    .header .header_text{
+        width: 90%;
+    }
+    #Marck_Script_header{ 
+        font-size: 50px;
+    }
+
+}
+@media (max-width: 536px){
+    #header_button{
+        width: 100%;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .header__button1,
+    .header__button2 {
+        margin: 10px 10px 0;
+    }
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ABOUT
+ВТОРОЙ БЛОК
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.about{
+    height: 800px;
+    position: relative;
+    top: 0px;
+}
+.about_img{
+    width: 1600px;
+    height: 2000px;
+    background-color: rgb(184, 184, 184);
+    background: url(../IMG/about/Vector_Smart_Object.png);
+    background-size: 1599px;
+    background-position: center;
+    position: fixed;
+    top: -300px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: -1;
+    overflow: hidden;
+}
+.about_content{
+    width: 510px;
+    margin: auto;
+    padding: 70px 0 0 0;
+    height: 710px;    
+}
+.about_content .Marck_Script_Text{
+    margin-top: 100px;
+    color: tomato;
+}
+.about_content .text{
+    text-align: center;
+    font-family: 'Conv_Focus-Regular[2]';
+    font-weight: lighter;
+    margin-top: 30px;
+    line-height: 1.5;
+}
+.about_content .img_bottom{
+    width: 219px;
+    margin: auto;
+    margin-top: 45px;
+}
+.img_povar2{
+    display: block;
+    width: 150px;
+    height: 150px;
+    position: relative;
+    top: -229px;
+    left: -5px;
+    border-radius: 50%;
+    -webkit-animation: povar 14s infinite;
+            animation: povar 14s infinite;
+    background-image: url(../IMG/about/Layer15.png);
+}
+@-webkit-keyframes povar{
+    0%{
+        opacity: 0;
+    }
+    35%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@keyframes povar{
+    0%{
+        opacity: 0;
+    }
+    35%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    85%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+@media (max-width: 768px){
+    .about{
+        width: 100%;
+    }
+}
+@media (max-width: 550px){
+    .about_content{
+        width: 90%;
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+ingredients
+третий блок
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.ingredients{
+    width: auto;
+    height: 760px;
+    background-color: rgb(255, 255, 255);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.ingredients_img{
+    width: 100%;
+}
+.ingredients_img img{
+    margin: 200px auto 0;
+    display: block;
+}
+.ingredients_content{
+    width: 100%;
+    height: 760px;
+    background-color: rgb(255, 255, 255);
+}
+.ingredients_content .ingredients_content_osnova{
+    width: 570px;
+    height: 100%;
+    background: url(../IMG/ingredients/bg.png);
+}
+.ingredients_content_osnova .Marck_Script_Text{
+    color: white;
+    padding: 180px 0 0 0;
+}
+.ingredients_content_osnova .logo{
+    width: 247px;
+    margin: 20px auto 0;
+}
+.ingredients_content_osnova .text{
+    text-align: center;
+    color: white;
+    font-family: 'Conv_Focus-Regular[2]';
+    margin: 30px 0 0 0;
+    line-height: 1.5;
+}
+.ingredients_content_osnova .img_ingred{
+    margin: 50px auto 0;
+    width: 370px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+@media (max-width: 1180px){
+    .ingredients_img{
+        display: none;
+    }
+    .ingredients{
+        width: 100%;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+    }
+    .ingredients_content {
+        width: auto;
+    }
+}
+
+
+@media (max-width: 570px){
+    .ingredients_content {
+        width: 100%;
+    }
+    .ingredients_content .ingredients_content_osnova{
+        width: 100%;
+        background-position: center;
+    }
+    .ingredients_content_osnova .text{
+        margin: 30px auto 0;
+        width: 90%;
+    }
+}
+@media (max-width: 370px){
+    .ingredients_content_osnova .img_ingred{
+        width: 100%;
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+MENU
+четвертый блок
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.menu{
+    font-family: 'Conv_Focus-Medium';
+    position: relative;
+    font-size: 21px;
+    width: auto;
+    height: 1000px;
+    background: url(../IMG/menu/Rectangle.png) center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+}
+.menu .left{
+    width: 500px;
+    height: auto;
+    padding: 40px 0 0 0;
+    margin: 0 50px 0 0;
+}
+.menu .right{
+    width: 500px;
+    height: auto;
+    padding: 40px 0 0 0;
+    margin: 0 0 0 50px;
+}
+.menu .Marck_Script_Text{
+    margin-top: 60px;
+    color: white;
+}
+.menu .menu_osnovs_content{
+    width: 480px;
+    margin: auto;
+    line-height: 2;
+    border-bottom: 1px rgb(128, 20, 20) solid;
+    font-weight: lighter;
+}
+.menu .menu_osnovs_content:last-of-type{
+    border: 0;
+}
+.border_none{
+    border: 0;
+}
+.menu cost{
+    float: right;
+}
+.menu text{
+    font-size: 16px;
+    font-family: 'Conv_Focus-Regular[2]';
+}
+#fish1{
+    position: absolute;
+    left: 50px;
+    top: 275px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+#fish2{
+    position: absolute;
+    top: 350px;
+    left: 1100px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+@media (max-width: 1506px){
+    .menu{
+        width: 100%;
+    }
+    #fish1, #fish2{
+        display: none;
+    }
+}
+
+@media (max-width: 1180px){
+    .menu{
+        display: block;
+        width: 100%;
+        margin: auto;
+        height: auto;
+    }
+    .menu .left{
+        margin: auto;
+    }
+    .menu .right{
+        margin: auto;
+        padding-bottom: 40px;
+    }
+}
+
+
+
+@media (max-width: 500px){
+    .menu .left{
+        width: 100%;
+    }
+    .menu .right{
+        width: 100%;
+    }
+    .menu .menu_osnovs_content{
+        width: 90%;
+    }
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+REVIEWS
+пятый блок
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.reviews{
+    width: auto;
+    height: 760px;
+    background-color: white;
+}
+.reviews .img1{
+    padding-top: 150px;
+    width: 296px;
+    margin: auto;
+}
+.reviews .Marck_Script_Text{
+    margin: auto;
+    width: 200px;
+    margin-top: 50px;
+}
+.reviews .text{
+    margin: auto;
+    width: 1000px;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 25px;
+    font-family: 'Conv_Focus-Regular[2]';
+    line-height: 1.5;
+}
+.reviews .Marck_Script_Text2{
+    margin: auto;
+    width: 500px;
+    text-align: center;
+    font-family: 'Conv_Marck Script Regular';
+    margin-top: 30px;
+    font-size: 41px;
+}
+.reviews .img3{
+    width: 184px;
+    margin: auto;
+    margin-top: 20px;
+}
+@media (max-width: 1000px){
+    .reviews .text{
+        width: 100%;
+    }
+}
+@media (max-width: 768px){
+    .reviews .text{
+        width: 90%;
+        font-size: 15px;
+    }
+    .reviews .Marck_Script_Text2{
+        width: 100%;
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+reservations
+шестой блок
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.reservations{
+    width: auto;
+    min-height: 710px;
+    background: url(../IMG/reservations/background.png) center/auto 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex; 
+    position: relative;
+}
+.reservations .left{
+    width: 600px;
+    height: 100%;
+    position: relative;
+    left: 200px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+.reservations .right{
+    width: 435px;
+    height: 100%;
+    position: relative;
+    left: 300px;    
+}
+.reservations .left .slayder1, .reservations .left .slayder2{
+    width: 270px;
+    height: 500px;
+    margin: 100px 15px;
+    overflow: hidden;
+}
+.reservations .left .slayder1 img, .reservations .left .slayder2 img{
+    margin-bottom: -4px;
+}
+.slayder1_left{
+    position: relative;
+    top: -500px;
+    -webkit-animation: slayder1_left 14s infinite;
+            animation: slayder1_left 14s infinite;
+}
+@-webkit-keyframes slayder1_left{
+    0%{
+        top: -500px;
+    }
+    35%{
+        top: -500px;
+    }
+    50%{
+        top: 0;
+    }
+    85%{
+        top: 0;
+    }
+    100%{
+        top: -500px;
+    }
+}
+@keyframes slayder1_left{
+    0%{
+        top: -500px;
+    }
+    35%{
+        top: -500px;
+    }
+    50%{
+        top: 0;
+    }
+    85%{
+        top: 0;
+    }
+    100%{
+        top: -500px;
+    }
+}
+.slayder1_right{
+    position: relative;
+    top: 0;
+    -webkit-animation: slayder1_right 14s infinite;
+            animation: slayder1_right 14s infinite;
+    -webkit-animation-delay: 4s;
+            animation-delay: 4s
+}
+@-webkit-keyframes slayder1_right{
+    0%{
+        top: 0;
+    }
+    35%{
+        top: 0;
+    }
+    50%{
+        top: -500px;
+    }
+    85%{
+        top: -500px;
+    }
+    100%{
+        top: 0;
+    }
+}
+@keyframes slayder1_right{
+    0%{
+        top: 0;
+    }
+    35%{
+        top: 0;
+    }
+    50%{
+        top: -500px;
+    }
+    85%{
+        top: -500px;
+    }
+    100%{
+        top: 0;
+    }
+}
+.reservations .right .Marck_Script_Text{
+    width: 400px;
+    margin: auto;
+    color: tomato;
+    margin-top: 100px;
+}
+.reservations .right .text{
+    font-family: 'Conv_Focus-Regular[2]';
+    width: 400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    line-height: 1.5;
+}
+.reservations .right .vvedi{
+    margin: auto;
+    margin-top: 100px;
+    width: 400px;
+    display: grid;
+    grid-template-columns: 200px 200px;
+    grid-template-rows: 65px 65px;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+.reservations .right .cnopka{
+    width: 100%;
+    margin: 50px auto;
+    text-align: center;
+}
+.reservations__btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 0 30px;
+    font-family: 'Conv_Focus-Regular[1]';
+    background-color: tomato;
+    height: 50px;
+    line-height: 50px;
+    color: white;
+}
+.reservations .right .vvedi input{
+    width: 200px;
+    height: 35px;
+    border: 1px solid gray;
+}
+.reservations .right .vvedi .name1{
+    font-family: 'Conv_Focus-Medium';
+    font-size: 14px;
+    color: tomato;
+}
+.reservations .right .vvedi input{
+    color: gray;
+    font-size: 12px;
+}
+#fish3{
+    position: absolute;
+    top: 100px;
+    left: 0px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+#fish4{
+    position: absolute;
+    top: 260px;
+    left: 1280px;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+}
+
+@media (max-width: 1525px){
+    #fish3{
+        display: none;
+    }
+    #fish4{
+        display: none;
+    }
+    .reservations{
+        width: 100%;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+    }
+    .reservations .left{
+        left: 0;
+    }
+    .reservations .right{
+        left: 0;    
+    }
+}
+@media (max-width: 1180px){
+    .reservations .left{
+        display: none;
+    }
+}
+@media (max-width: 768px){
+    .reservations .right .vvedi{
+        grid-template-columns: 430px;
+        width: 430px;
+        margin: auto;
+    }
+    .reservations .right .vvedi .text_input{
+        width: 430px;
+        margin: auto;
+    }
+    .reservations .right .vvedi input{
+        width: 430px;
+    }
+    .reservations .right .Marck_Script_Text{
+        width: 100%;
+    }
+}
+@media (max-width: 470px){
+    .reservations .right{
+        width: 100%;
+    }
+    .reservations .right .vvedi{
+        width: 90%;
+        grid-template-columns: 100%;
+    }
+    .reservations .right .vvedi .text_input{
+        width: 100%;
+        margin: auto;
+    }
+    .reservations .right .vvedi input{
+        width: 100%;
+    }
+    .reservations .right .text{
+        width: 90%;
+    }
+}
+/*/////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////////////////
+
+.FOOTER
+САМЫЙ НИЖНИЙ БЛОК
+
+/////////////////////////////////////////////////////////////////////////////////////////*/
+.footer{
+    width: auto;
+    min-height: 320px;
+    background: url(../IMG/header/base.png) center repeat-y;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+.footer div{
+    width: 415px;
+}
+#content_footer1, #content_footer3{
+    margin-top: 100px;
+    text-align: center;
+    color: gray;
+    font-family: 'Conv_Focus-Medium';
+    font-size: 13px;
+    line-height: 2.3;
+}
+#content_footer2 #logo{
+    display: block;
+    margin: auto;
+    margin-top: 60px;
+}
+#content_footer2 .social_network{
+    width: 230px;
+    margin: auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    margin-top: 32px;
+}
+#content_footer2 .social_network .icon{
+    width: 35px;
+    height: 35px;
+    background-color: rgb(22, 18, 53);
+    border-radius: 50%;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+}
+#content_footer2 .social_network .icon:hover{
+    background-color: rgb(236, 81, 54);
+}
+#content_footer2 p{
+    margin-top: 32px;
+    text-align: center;
+    color: gray;
+}
+#content_footer1 p a{
+    text-decoration: none;
+    color: gray;
+}
+@media (max-width: 768px){
+    .footer{
+        width: 100%;
+    }
+    .footer{
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    }
+    #content_footer2 {
+        -webkit-box-ordinal-group: 0;
+            -ms-flex-order: -1;
+                order: -1;
+        width: 100%;
+    }
+    #content_footer1, #content_footer3 {
+        margin: 30px 20px 0;
+        width: auto;
+    }
+}
